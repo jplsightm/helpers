@@ -33,11 +33,11 @@ def web_test(url, proxy = False):
     
     # http://stackoverflow.com/questions/1450132/proxy-with-urllib2
     if proxy:
-        proxy = urllib2.ProxyHandler({
+        p = urllib2.ProxyHandler({
         'http': proxy,
         'https': proxy
         })
-        opener = urllib2.build_opener(proxy)
+        opener = urllib2.build_opener(p)
         urllib2.install_opener(opener)
         print 'proxy set to {}'.format(proxy)
         
